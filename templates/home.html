@@ -7,19 +7,28 @@
          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
          <style>
             #banner {
-                height: 260px;
+                object-fit: cover;
                 width: 100%;
+                height: 420px;
+                margin-bottom: 16px;
             }
          </style>
      </head>
      <body>
+        {% include 'nav.html' %}
+        <img class="img-fluid" id="banner" src="/static/banner.jpg">
         <div class="container">
             <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
-            <img class="img-fluid" src="http://127.0.0.1:5000/static/banner.jpg">
-            <h2 class="text-center mt-2 mb-4">About Jovian</h2>
-            <p class="lead">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
-            </p>
+            <div class="row" style="margin-bottom: 36px;">   
+                <div class="col-md-6">         
+                    <p class="lead">
+                        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+                    </p>
+                </div>
+                <div class="d-none d-md-block col-md-6">
+                    <img src="/static/people.jpg" style="width: 100%;">
+                </div>
+            </div>
             <h2 class="text-center mt-2 mb-4">Open Positions</h2>
             <div>
                 {% for job in jobs %}
@@ -27,10 +36,10 @@
                 {% endfor %}
             </div>
             <div class="text-center">
-                <button class="btn btn-primary btn-lg">Contact us</button>
-                <p class="mt-4">Copyright 2022, Jovian</p>
+                <a href="mailto:jovian@gmail.com?subject=Application%20form%20query&body=Name%20-%20%3CYour%20Name%3E%0D%0AQuery%20-%20%3CYour%20Query%3E" class="btn btn-primary btn-lg">Contact us</a>
             </div>
          </div>
+         {% include 'footer.html' %}
      </body>
      
 </html>
